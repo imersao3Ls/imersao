@@ -1,0 +1,16 @@
+:root {
+    --largura: 60vw;
+    --base: 300, 100%;
+    --base-10: hsl(var(--base), 10%);
+    --base-20: hsl(var(--base), 20%);
+    --base-30: hsl(var(--base), 30%);
+    --base-40: hsl(var(--base), 40%);
+    --base-50: hsl(var(--base), 50%);
+    --base-60: hsl(var(--base), 60%);
+    --base-70: hsl(var(--base), 70%);
+    --base-80: hsl(var(--base), 80%);
+    --base-90: hsl(var(--base), 90%);
+    --texto: #f5f5f5;
+    --fundo: rgb(0, 0, 0);
+    --sombra: #222;
+}
