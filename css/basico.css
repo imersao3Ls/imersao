@@ -1,5 +1,5 @@
 :root {
-    font: 14px Lora, sans-serif;
+    font: 14px var(--fonte);
 }
 
 /* @media (max-width: 599px) {  } */

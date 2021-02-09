@@ -2,13 +2,13 @@
 @import 'basico.css';
 
 body {
-    background-color: var(--base-10);
+    background-color: var(--fundo);
     color: var(--texto);
 }
 
 section > h1 {
     text-align: center;
-    margin-bottom: 1rem;
+    padding: 1rem 0;
 }
 
 .botao a {
@@ -20,9 +20,9 @@ section > h1 {
     text-align: center;
 }
 
-@media (min-width: 600px) {   
+@media (min-width: 900px) {   
     .capa {
-        background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pptgrounds.com%2Fwp-content%2Fuploads%2F2012%2F12%2FVintage-Purple-Pattern-Powerpoint-Backgrounds-800x600.jpg&f=1&nofb=1') no-repeat center/cover;
+        background: url('../assets/fundo.jpg') no-repeat bottom/cover;
     }
     .capa > img {
         width: 85%;
@@ -30,7 +30,7 @@ section > h1 {
     }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 899px) {
     .capa > img {
         width: 100%;
     }
@@ -53,8 +53,9 @@ section > h1 {
 }
 
 .conteudo {
-    width: 100vw;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--base-10);
 }
 
 .topicos {
@@ -62,21 +63,25 @@ section > h1 {
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 1rem;
+    width: var(--largura);
+    margin: 0 auto;
 }
 
 @media (min-width: 900px) {   
     .topicos {
         grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
         width: 85%;
-        margin: 1rem auto;
     }
-
+    .topicos li:nth-child(2n) {
+        justify-self: self-start;
+    }
+    .topicos li:nth-child(2n + 1) {
+        justify-self: self-end;
+    }
     .topico {
-        width: calc(var(--largura) / 2);}
-
-    /* .topico .icone {
-        margin-right: 2rem;
-    } */
+        width: calc(var(--largura) / 2);
+    }
 }
 
 .topicos li {
@@ -106,9 +111,17 @@ section > h1 {
     text-decoration: underline;
 }
 
+.onda {
+    width: 100%;
+    height: 33vh;
+    border-top: 1px solid var(--base-10);
+    clip-path: var(--onda);
+    background-color: var(--base-10);
+}
+
 .perfis {
     width: var(--largura);
-    margin: 2rem auto;
+    margin: 0 auto;
 }
 
 .perfil {
@@ -178,15 +191,23 @@ section > h1 {
 }
 
 .call-to-action {
-    width: 100vw;
+    width: var(--largura);
+    margin: 0 auto;
+}
+
+.call-to-action > h2 {
+    width: 92%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .botao {
     display: block;
     width: 85%;
-    margin: 1rem auto;
+    margin: 3rem auto;
     border-radius: .5rem;
-    /* box-shadow: 4px 4px var(--sombra); */
     background-color: var(--base-30);
     color: var(--texto);
     font-size: 1.5rem;
@@ -208,7 +229,6 @@ section > h1 {
 }
 
 .botao:active {
-    /* box-shadow: 4px 2px var(--sombra); */
     transform: translateY(2px);
 }
 
