@@ -6,27 +6,34 @@ body {
     color: var(--texto);
 }
 
-section > h2 {
+section > h1 {
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .botao a {
     color: var(--texto);
-    padding: 1.6rem 0;
+    padding: 1rem;
 }
 
 .just {
     text-align: center;
 }
 
-.capa {
-    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pptgrounds.com%2Fwp-content%2Fuploads%2F2012%2F12%2FVintage-Purple-Pattern-Powerpoint-Backgrounds-800x600.jpg&f=1&nofb=1') no-repeat center/cover;
+@media (min-width: 600px) {   
+    .capa {
+        background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pptgrounds.com%2Fwp-content%2Fuploads%2F2012%2F12%2FVintage-Purple-Pattern-Powerpoint-Backgrounds-800x600.jpg&f=1&nofb=1') no-repeat center/cover;
+    }
+    .capa > img {
+        width: 85%;
+        margin: 0 7.5%;
+    }
 }
 
-.capa > img {
-    width: 85%;
-    margin: 0 7.5%;
+@media (max-width: 599px) {
+    .capa > img {
+        width: 100%;
+    }
 }
 
 .saiba-mais {
@@ -34,19 +41,42 @@ section > h2 {
     background-color: var(--fundo);
 }
 
-.saiba-mais > .botao {
-    width: 18rem;
-    height: 5rem;
+.saiba-mais > h2 {
+    width: 92%;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .saiba-mais .botao {
+        width: 18rem;
+    }
 }
 
 .conteudo {
-    width: var(--largura);
+    width: 100vw;
     margin: 2rem auto;
 }
 
 .topicos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 900px) {   
+    .topicos {
+        grid-template-columns: repeat(2, 1fr);
+        width: 85%;
+        margin: 1rem auto;
+    }
+
+    .topico {
+        width: calc(var(--largura) / 2);}
+
+    /* .topico .icone {
+        margin-right: 2rem;
+    } */
 }
 
 .topicos li {
@@ -56,16 +86,13 @@ section > h2 {
 .topico {
     display: flex;
     align-items: center;
-    width: calc(var(--largura) / 2);
     padding: .5rem;
-    margin: 1rem;
 }
 
 .topico .icone {
     display: inline-block;
     width: 5rem;
     height: 5rem;
-    margin-right: 2rem;
     filter: invert(100%) sepia(0%) saturate(3812%) hue-rotate(125deg) brightness(114%) contrast(92%);
 }
 
@@ -86,47 +113,89 @@ section > h2 {
 
 .perfil {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     margin: 3rem 0;
 }
 
-.perfil figure {
-    margin: 0 1rem;
+.perfil > * {
+    max-width: 85vw;
+}
+
+.perfil .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.perfil:nth-child(2n + 1) img {
+    float: left;
+    shape-outside: circle();
+    /* margin-right: 1rem; */
+}
+
+.perfil:nth-child(2n) img {
+    float: right;
+    shape-outside: circle();
+    /* margin-left: 1rem; */
 }
 
 .perfil img {
+    display: inline-block;
     width: 10rem;
-    border-radius: 50%;;
+    border-radius: 50%;
 }
 
-.perfil figcaption {
+.perfil .titulo,
+.perfil p {
     text-align: center;
 }
 
-/* .perfil-1,
-.perfil-2,
-.perfil-3,
-.perfil-4,
-.perfil-5,
-.perfil-6 {
-} */
+.perfil a {
+    display: inline-block;
+    text-decoration: revert;
+    color: var(--base-90);
+}
 
-.perfil-2,
-.perfil-4,
-.perfil-6 {
-    text-align: right;
+.perfil a:hover {
+    color: var(--base-70);
+}
+
+.perfil a:active {
+    color: var(--base-60);
+}
+
+@media (max-width: 599px) {
+    .perfil a {
+        display: block;
+    }
+    .hifen {
+        display: none;
+    }
+}
+
+.call-to-action {
+    width: 100vw;
 }
 
 .botao {
     display: block;
-    width: 29rem;
-    height: 7rem;
+    width: 85%;
     margin: 1rem auto;
     border-radius: .5rem;
-    box-shadow: 4px 4px var(--sombra);
+    /* box-shadow: 4px 4px var(--sombra); */
     background-color: var(--base-30);
     color: var(--texto);
     font-size: 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .call-to-action .botao {
+        width: 29rem;
+    }
 }
 
 .botao:focus {
@@ -139,7 +208,7 @@ section > h2 {
 }
 
 .botao:active {
-    box-shadow: 4px 2px var(--sombra);
+    /* box-shadow: 4px 2px var(--sombra); */
     transform: translateY(2px);
 }
 

@@ -1,5 +1,14 @@
+@media (max-width: 599px) {
+    :root {
+        --largura: 100vw;
+    }
+}
+@media (min-width: 600px) {
+    :root {
+        --largura: 60vw;
+    }
+}
 :root {
-    --largura: 60vw;
     --base: 300, 100%;
     --base-10: hsl(var(--base), 10%);
     --base-20: hsl(var(--base), 20%);
