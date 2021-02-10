@@ -73,12 +73,6 @@ section > h1 {
         gap: 3rem;
         width: 85%;
     }
-    .topicos li:nth-child(2n) {
-        justify-self: self-start;
-    }
-    .topicos li:nth-child(2n + 1) {
-        justify-self: self-end;
-    }
     .topico {
         width: calc(var(--largura) / 2);
     }
@@ -119,6 +113,12 @@ section > h1 {
     background-color: var(--base-10);
 }
 
+.onda--inv {
+    clip-path: var(--onda-inv);
+    border-top: 0;
+    border-bottom: 1px solid var(--base-10);
+}
+
 .perfis {
     width: var(--largura);
     margin: 0 auto;
@@ -146,20 +146,17 @@ section > h1 {
 
 .perfil:nth-child(2n + 1) img {
     float: left;
-    shape-outside: circle();
-    /* margin-right: 1rem; */
 }
 
 .perfil:nth-child(2n) img {
     float: right;
-    shape-outside: circle();
-    /* margin-left: 1rem; */
 }
 
 .perfil img {
     display: inline-block;
     width: 10rem;
     border-radius: 50%;
+    shape-outside: circle();
 }
 
 .perfil .titulo,
@@ -199,8 +196,7 @@ section > h1 {
     width: 92%;
     margin: 0 auto;
     text-align: center;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
+    font: 600 27px 'Open Sans', sans-serif;
 }
 
 .botao {
@@ -240,4 +236,17 @@ section > h1 {
 
 .preco {
     color: var(--texto);
+}
+
+.cta--base {
+    width: 100%;
+    background-color: var(--base-10);
+}
+
+.cta--base h2 {
+    padding-top: 3rem;
+}
+
+.cta--base .botao {
+    margin-bottom: 0;
 }

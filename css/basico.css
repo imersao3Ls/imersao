@@ -2,15 +2,11 @@
     font: 14px var(--fonte);
 }
 
-/* @media (max-width: 599px) {  } */
-
 @media (min-width: 600px) {
     :root {
         font-size: 18px;
     }
 }
-
-/* @media (min-width: 900px) {  } */
 
 @media (min-width: 1200px) {
     :root {
