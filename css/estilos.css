@@ -215,7 +215,12 @@ section > h1 {
     }
 }
 
-.botao:focus {
+.botao > a {
+    border-radius: .5rem;
+}
+
+.botao:focus,
+.botao > a:focus {
     outline: none;
     background-color: var(--base-60);
 }
